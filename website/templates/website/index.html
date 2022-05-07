@@ -36,7 +36,7 @@
                     <a href="#">Staff Portal</a>
                     <a href="#">Student Portal</a>
                 </div>
-                  
+
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">&#9776;</button>
 
@@ -49,7 +49,9 @@
                     <li><a href="#">News Updates</a></li>
                     <li><a href="#">Staff Portal</a></li>
                     <li><a href="#">Student Portal</a></li>
-                    <li><a href="#"></a></li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
 
                 </ul>
 
@@ -74,8 +76,7 @@
         <div class="menu-section">
             <div class="logo-section">
                 {% for i in settings %}
-                    <img src="{{ i.logo.url }}" alt="">
-                {%endfor%}
+                <img src="{{ i.logo.url }}" alt=""> {%endfor%}
             </div>
             <div class="menu-list">
                 <ul>
@@ -98,15 +99,16 @@
                 <button class="carousel-button next" data-carousel-button="next" id="clicked">&#8658;</button>
                 <ul data-slides>
                     {% for i in slider %}
-                        <li class="slide" data-active>
-                            <img src="{{ i.image.url }}" alt="Nature Image #1">
-                            <div class="slider-info">
-                                <h1>{{i.title|safe}}</h1>
-                                <p>{{i.content|safe }}</p>
-                                <button>{{i.button1}}</button>
-                                <button>{{i.button2}}</button>
-                            </div>
-                        </li>
+                    <li class="slide" data-active>
+                        <img src="{{ i.image.url }}" alt="Nature Image #1">
+                        <div class="slider-info">
+                            <h1>{{i.title|safe}}</h1>
+                            <p>{{i.content|safe }}</p>
+
+                            <button onclick="location.href='{% url 'form-home' %}'" type="button">{{i.button1}}</button>
+                            <button>{{i.button2}}</button>
+                        </div>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -120,22 +122,19 @@
 
         <div class="brief-section">
             <div class="brief-left">
-                <h1>Study at NIHAZ <br>
-                    in 2021/2022
+                <h1>Study at NIHAZ <br> in 2021/2022
                 </h1>
                 {% for i in settings %}
-                    <a href=""><i class="fa fa-envelope" aria-hidden="true"></i><small>{{ i.email1 }}</small></a>
-                    <a href=""><i class="fa fa-phone" aria-hidden="true"></i><small>{{i.tel1}}</small></a>
-                {% endfor %}
+                <a href=""><i class="fa fa-envelope" aria-hidden="true"></i><small>{{ i.email1 }}</small></a>
+                <a href=""><i class="fa fa-phone" aria-hidden="true"></i><small>{{i.tel1}}</small></a> {% endfor %}
 
             </div>
             <div class="brief-right">
                 <h1>
                     Explore our Courses
                 </h1>
-                {% for  i in programs %}
-                    <a href="#"><i class="fas fa-running" aria-hidden="true"></i><small>{{ i.program_name }}</small></a>
-                {% endfor %}
+                {% for i in programs %}
+                <a href="#"><i class="fas fa-running" aria-hidden="true"></i><small>{{ i.program_name }}</small></a> {% endfor %}
 
                 <br><a href="#"><i class="fas fa-arrow-right" aria-hidden="true"></i><small>click Here to Browse More
                     </small></a>
@@ -152,10 +151,7 @@
 
             <div class="why">
                 <h1>Why Choose Us</h1>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ooyk3d5Z3DI"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ooyk3d5Z3DI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 <div class="accordion-wrapper">
                     <div class="accordion">
@@ -163,11 +159,8 @@
                         <label class="accordion-label" for="check1">Quality Education</label>
                         <div class="accordion-content">
                             <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, aliquam voluptas
-                                maxime, molestiae expedita quis saepe doloremque ad accusantium deleniti commodi!
-                                Doloremque velit similique esse accusamus obcaecati totam quia consequuntur.
-                                Necessitatibus, officia! Laudantium itaque quidem modi, quas nesciunt tempora
-                                perferendis, et possimus nam distinctio, at voluptatibus ipsa doloribus nobis sapiente.
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, aliquam voluptas maxime, molestiae expedita quis saepe doloremque ad accusantium deleniti commodi! Doloremque velit similique esse accusamus obcaecati totam
+                                quia consequuntur. Necessitatibus, officia! Laudantium itaque quidem modi, quas nesciunt tempora perferendis, et possimus nam distinctio, at voluptatibus ipsa doloribus nobis sapiente.
                             </p>
                         </div>
                     </div>
@@ -175,11 +168,8 @@
                         <input type="radio" name="radio-a" id="check2">
                         <label class="accordion-label" for="check2">Peaceful Learning</label>
                         <div class="accordion-content">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur architecto impedit
-                                quam incidunt minus aspernatur repellat, laudantium reiciendis natus atque ab eos
-                                laboriosam totam assumenda ea culpa corporis voluptate in facilis voluptatibus et.
-                                Adipisci error iste obcaecati quo voluptates non iure a sint quos. Quibusdam unde a ab
-                                itaque placeat!
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur architecto impedit quam incidunt minus aspernatur repellat, laudantium reiciendis natus atque ab eos laboriosam totam assumenda ea culpa corporis voluptate
+                                in facilis voluptatibus et. Adipisci error iste obcaecati quo voluptates non iure a sint quos. Quibusdam unde a ab itaque placeat!
                             </p>
                         </div>
                     </div>
@@ -187,22 +177,16 @@
                         <input type="radio" name="radio-a" id="check3">
                         <label class="accordion-label" for="check3">Quality of Staff & Staff</label>
                         <div class="accordion-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, reprehenderit id
-                                architecto saepe, repellendus accusamus suscipit magnam fugit quae, amet illum molestias
-                                totam. Cumque suscipit aspernatur error voluptates ad eius animi voluptatum praesentium
-                                tempore cupiditate esse totam inventore culpa pariatur quasi, veniam libero quos dolor
-                                consequuntur? Laborum quam cupiditate asperiores. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, reprehenderit id architecto saepe, repellendus accusamus suscipit magnam fugit quae, amet illum molestias totam. Cumque suscipit aspernatur error voluptates
+                                ad eius animi voluptatum praesentium tempore cupiditate esse totam inventore culpa pariatur quasi, veniam libero quos dolor consequuntur? Laborum quam cupiditate asperiores. </p>
                         </div>
                     </div>
                     <div class="accordion">
                         <input type="radio" name="radio-a" id="check4">
                         <label class="accordion-label" for="check4">Our Facts at a Glance</label>
                         <div class="accordion-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum distinctio quam ipsam
-                                recusandae explicabo ipsa ratione iusto modi cupiditate, tempore temporibus repellat
-                                atque blanditiis, sed vitae necessitatibus libero rerum nulla nihil similique! Ipsum
-                                exercitationem sequi deleniti praesentium doloremque molestiae, officia tempora beatae
-                                dolores. Delectus sit vitae placeat accusamus vero dolorum.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum distinctio quam ipsam recusandae explicabo ipsa ratione iusto modi cupiditate, tempore temporibus repellat atque blanditiis, sed vitae necessitatibus libero rerum
+                                nulla nihil similique! Ipsum exercitationem sequi deleniti praesentium doloremque molestiae, officia tempora beatae dolores. Delectus sit vitae placeat accusamus vero dolorum.</p>
                         </div>
                     </div>
                 </div>
@@ -229,31 +213,31 @@
 
 
                 {% for i in updates %}
-                    <div class="new-content">
+                <div class="new-content">
 
-                        <div class="img-card">
-                            <img src="{{i.image.url}}" alt="">
-                            <p>Lorem ipsum dolor sit amet.</p>
+                    <div class="img-card">
+                        <img src="{{i.image.url}}" alt="">
+                        <p>Lorem ipsum dolor sit amet.</p>
 
-                       </div>
-                        <div class="content-card">
-                            <h1>{{i.title}}</h1>
-                            <p>{{i.content}}</p>
-                            <div class="content-footer">
-                                <div>
-                                    <button class="btn-arrow">Details<i class="fa fa-angle-right"
+                    </div>
+                    <div class="content-card">
+                        <h1>{{i.title}}</h1>
+                        <p>{{i.content}}</p>
+                        <div class="content-footer">
+                            <div>
+                                <button class="btn-arrow">Details<i class="fa fa-angle-right"
                                             aria-hidden="true"></i></button>
-                                </div>
+                            </div>
 
-                                <div>
-                                    <button class="btn-arrow">0 Comment</button>
-                                </div>
-
+                            <div>
+                                <button class="btn-arrow">0 Comment</button>
                             </div>
 
                         </div>
 
                     </div>
+
+                </div>
                 {% endfor %}
 
 
@@ -280,21 +264,18 @@
             </div>
 
             {% for i in events %}
-                <div class="event-card">
-                    <img src="{{i.image.url}}" alt="">
-                    <div class="event-card-info">
-                        <h4>{{i.date|safe}}</h4>
-                        <p> {{i.title}}<i
-                                style="padding-left: 20px;" class="fas fa-angle-right" aria-hidden="true"></i>
-                            <br>
-                            {% if i.free %}
-                                <span>Free</span><br>
-                            {% endif %}
-                            <small> At 8:00am</small>
+            <div class="event-card">
+                <img src="{{i.image.url}}" alt="">
+                <div class="event-card-info">
+                    <h4>{{i.date|safe}}</h4>
+                    <p> {{i.title}}<i style="padding-left: 20px;" class="fas fa-angle-right" aria-hidden="true"></i>
+                        <br> {% if i.free %}
+                        <span>Free</span><br> {% endif %}
+                        <small> At 8:00am</small>
 
-                        </p>
-                    </div>
+                    </p>
                 </div>
+            </div>
             {% endfor %}
 
 
@@ -322,7 +303,7 @@
                     <h1>Quick Link to Courses</h1>
                     <ul>
                         {% for i in programs %}
-                            <li><i class="fas fa-angle-right" aria-hidden="true"></i><a href="#">{{i.program_name}}</a></li>
+                        <li><i class="fas fa-angle-right" aria-hidden="true"></i><a href="#">{{i.program_name}}</a></li>
                         {% endfor %}
                     </ul>
 
@@ -330,9 +311,9 @@
                 <div class="contact">
                     <h1>Our Contact</h1>
                     {% for i in settings %}
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i><small>{{i.email1}}</small></p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i><small>{{i.tel1}}</small></p>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{i.address}}</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i><small>{{i.email1}}</small></p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i><small>{{i.tel1}}</small></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{i.address}}</p>
                     {% endfor %}
 
                 </div>
@@ -382,8 +363,6 @@
 
 
     <script>
-
-
         const buttons = document.querySelectorAll("[data-carousel-button]")
 
         buttons.forEach(button => {
@@ -402,33 +381,31 @@
                 delete activeSlide.dataset.active
             })
         })
-        window.onload = function () {
+        window.onload = function() {
             var button = document.getElementById('clicked');
-            setInterval(function () {
+            setInterval(function() {
                 button.click();
-            }, 10000);  // this will make it click again every 1000 miliseconds
+            }, 10000); // this will make it click again every 1000 miliseconds
         };
-
-
     </script>
 
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "500px";
-            
-            }
 
-            /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-            function closeNav() {
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
-            }
+        }
     </script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(window).on("load", function () {
+        $(window).on("load", function() {
             $(".center").fadeToggle(1500);
         });
     </script>
